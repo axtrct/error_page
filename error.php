@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-require('api/statuscode.php');
+require('statuscode.php');
 session_start();
 if (isset($_SESSION['status']) && isset($_SESSION['reason'])) {
     unset($_SESSION['status'], $_SESSION['reason']);
