@@ -59,11 +59,3 @@ ErrorDocument 507 /error.php?s=507
 ErrorDocument 508 /error.php?s=508
 ErrorDocument 510 /error.php?s=510
 ErrorDocument 511 /error.php?s=511
-
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.*)$ $1.html [NC,L]
-
-RewriteCond %{REQUEST_FILENAME} !-d 
-RewriteCond %{REQUEST_FILENAME}\.php -f 
-RewriteRule ^(.*)$ $1.php
