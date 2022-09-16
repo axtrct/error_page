@@ -3,7 +3,6 @@ RewriteEngine On
 ErrorDocument 100 /error.php?s=100
 ErrorDocument 101 /error.php?s=101
 ErrorDocument 102 /error.php?s=102
-ErrorDocument 103 /error.php?s=103
 ErrorDocument 200 /error.php?s=200
 ErrorDocument 201 /error.php?s=201
 ErrorDocument 202 /error.php?s=202
@@ -20,7 +19,6 @@ ErrorDocument 302 /error.php?s=302
 ErrorDocument 303 /error.php?s=303
 ErrorDocument 304 /error.php?s=304
 ErrorDocument 305 /error.php?s=305
-ErrorDocument 306 /error.php?s=306
 ErrorDocument 307 /error.php?s=307
 ErrorDocument 308 /error.php?s=308
 ErrorDocument 400 /error.php?s=400
@@ -41,12 +39,10 @@ ErrorDocument 414 /error.php?s=414
 ErrorDocument 415 /error.php?s=415
 ErrorDocument 416 /error.php?s=416
 ErrorDocument 417 /error.php?s=417
-ErrorDocument 418 /error.php?s=418
 ErrorDocument 421 /error.php?s=421
 ErrorDocument 422 /error.php?s=422
 ErrorDocument 423 /error.php?s=423
 ErrorDocument 424 /error.php?s=424
-ErrorDocument 425 /error.php?s=425
 ErrorDocument 426 /error.php?s=426
 ErrorDocument 428 /error.php?s=428
 ErrorDocument 429 /error.php?s=429
@@ -63,3 +59,11 @@ ErrorDocument 507 /error.php?s=507
 ErrorDocument 508 /error.php?s=508
 ErrorDocument 510 /error.php?s=510
 ErrorDocument 511 /error.php?s=511
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php
